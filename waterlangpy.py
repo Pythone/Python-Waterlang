@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #
-# Brainfuck Interpreter
-# Copyright 2011 Sebastian Kaspari
+# Waterlang Interpreter
+# Copyright 2011 Sebastian Kaspari/ changed to Waterlang by Pythone
 #
 # Usage: ./waterlangpy.py [FILE]
 
