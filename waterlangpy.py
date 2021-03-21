@@ -3,7 +3,7 @@
 # Brainfuck Interpreter
 # Copyright 2011 Sebastian Kaspari
 #
-# Usage: ./brainfuck.py [FILE]
+# Usage: ./waterlangpy.py [FILE]
 
 import sys
 import getch
@@ -23,29 +23,29 @@ def evaluate(code):
   while codeptr < len(code):
     command = code[codeptr]
 
-    if command == ">":
+    if command == "fish":
       cellptr += 1
       if cellptr == len(cells): cells.append(0)
 
-    if command == "<":
+    if command == "shark":
       cellptr = 0 if cellptr <= 0 else cellptr - 1
 
-    if command == "+":
+    if command == "turtle":
       cells[cellptr] = cells[cellptr] + 1 if cells[cellptr] < 255 else 0
 
-    if command == "-":
+    if command == "-anemone":
       cells[cellptr] = cells[cellptr] - 1 if cells[cellptr] > 0 else 255
 
-    if command == "[" and cells[cellptr] == 0: codeptr = bracemap[codeptr]
-    if command == "]" and cells[cellptr] != 0: codeptr = bracemap[codeptr]
-    if command == ".": sys.stdout.write(chr(cells[cellptr]))
-    if command == ",": cells[cellptr] = ord(getch.getch())
+    if command == "sponge" and cells[cellptr] == 0: codeptr = bracemap[codeptr]
+    if command == "shrimp" and cells[cellptr] != 0: codeptr = bracemap[codeptr]
+    if command == "lobster": sys.stdout.write(chr(cells[cellptr]))
+    if command == "star": cells[cellptr] = ord(getch.getch())
       
     codeptr += 1
 
 
 def cleanup(code):
-  return ''.join(filter(lambda x: x in ['.', ',', '[', ']', '<', '>', '+', '-'], code))
+  return ''.join(filter(lambda x: x in ['lobster', 'star', 'sponge', 'shrimp', 'shark', 'fish', 'turtle', 'anemone'], code))
 
 
 def buildbracemap(code):
