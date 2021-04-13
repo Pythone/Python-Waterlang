@@ -52,8 +52,8 @@ def buildbracemap(code):
   temp_bracestack, bracemap = [], {}
 
   for position, command in enumerate(code):
-    if command == "[": temp_bracestack.append(position)
-    if command == "]":
+    if command == "sponge": temp_bracestack.append(position)
+    if command == "shrimp":
       start = temp_bracestack.pop()
       bracemap[start] = position
       bracemap[position] = start
