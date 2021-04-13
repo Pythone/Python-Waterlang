@@ -1,3 +1,4 @@
+# This is archived because it cannot do hello world and work well!!
 This is just a small ~~Brainfuck~~ ***waterlang*** interpreter written in Python.
 
 Usage:
